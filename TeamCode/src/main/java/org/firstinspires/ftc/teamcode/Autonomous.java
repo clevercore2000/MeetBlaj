@@ -1,11 +1,9 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.hardware.DcMotor;
 
-@Autonomous
-public class AutonomousBlue extends LinearOpMode {
+@com.qualcomm.robotcore.eventloop.opmode.Autonomous
+public class Autonomous extends LinearOpMode {
 
 
     Hardware hardware;
@@ -17,7 +15,8 @@ public class AutonomousBlue extends LinearOpMode {
         waitForStart();
         while (opModeIsActive()) {
 
-           hardware.rightFront.setPower(0.2);
+            sleep(20000);
+            hardware.rightFront.setPower(0.2);
             hardware.leftFront.setPower(0.2);
             hardware.rightBack.setPower(0.2);
             hardware.leftBack.setPower(0.2);

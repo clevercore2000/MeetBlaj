@@ -37,6 +37,7 @@ public class Arm {
          SCORE_SPECIMEN,
          SCORE_SAMPLE,
          IDLE,
+         PULL_UP;
 
 
     }
@@ -49,6 +50,16 @@ public class Arm {
     public void setSate (ArmStates armStates){
          switch (armStates){
 
+
+             case PULL_UP:{
+
+
+                 hardware.incheietura.setPosition(0.45);
+                 hardware.GrTrn.setPosition(0.44);
+                 hardware.Axon.setPosition(0.67);
+                 try{Thread.sleep(200);} catch (InterruptedException e){}
+                 hardware.pickS.setPosition(0.75);
+             }
              case PRE_COLLECT:{
 
                  hardware.pickS.setPosition(0.62);
@@ -59,9 +70,9 @@ public class Arm {
              }break;
              case COLLECT:{
 
-                 hardware.pickS.setPosition(0.65);
-                 try{Thread.sleep(1000);} catch (InterruptedException e){}
-                 hardware.Axon.setPosition(0.65);
+                 hardware.pickS.setPosition(0.7);
+                 try{Thread.sleep(700);} catch (InterruptedException e){}
+                 hardware.Axon.setPosition(0.63);
 
                  setSate(Arm.ArmStates.IDLE);
 
@@ -85,7 +96,7 @@ public class Arm {
              }break;
              case IDLE:{
                  hardware.incheietura.setPosition(0.45);
-                 hardware.Axon.setPosition(0.67);
+                 hardware.Axon.setPosition(0.62);
                  hardware.GrTrn.setPosition(0.4);
                  try{Thread.sleep(500);} catch (InterruptedException e){}
                  hardware.pickS.setPosition(0.3);

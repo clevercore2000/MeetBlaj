@@ -48,6 +48,14 @@ public class Hardware
         leftBack = hw.get(DcMotor.class, "leftBack");
 
 
+
+
+
+        rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
         sliderMotor1 = hw.get(DcMotor.class, "sliderMotor1");
         sliderMotor2 = hw.get(DcMotor.class, "sliderMotor2");
 

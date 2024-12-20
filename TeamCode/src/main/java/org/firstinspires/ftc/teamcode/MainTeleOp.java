@@ -97,7 +97,7 @@ public class MainTeleOp extends LinearOpMode {
             }
 
             if(gamepad2.circle){
-                hardware.Axon.setPosition(0.65);
+                hardware.Axon.setPosition(0.62);
             }
             if(gamepad2.cross){
                 hardware.Axon.setPosition(0.8);
@@ -114,7 +114,12 @@ public class MainTeleOp extends LinearOpMode {
                 hardware.GrTrn.setPosition(0.44);
             }
 
-           float g2Y = -gamepad2.left_stick_y * 50;
+            if(gamepad2.options){
+
+                arm.setSate(Arm.ArmStates.PULL_UP);
+            }
+
+           float g2Y = -gamepad2.left_stick_y * 45;
 
 
 

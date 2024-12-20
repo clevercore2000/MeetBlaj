@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 public class MecanumDrive {
     public Hardware hardware;
+    public double sensitivity = 0.5;
     public MecanumDrive(Hardware hardware){
 
         this.hardware = hardware;
@@ -18,10 +19,10 @@ public class MecanumDrive {
         double frontRightPower = (y - x - rx) / denominator;
         double backRightPower = (y + x - rx) / denominator;
 
-        hardware.leftFront.setPower(frontLeftPower);
-        hardware.leftBack.setPower(backLeftPower);
-        hardware.rightFront.setPower(frontRightPower);
-        hardware.rightBack.setPower(backRightPower);
+        hardware.leftFront.setPower(frontLeftPower * frontLeftPower * frontLeftPower * sensitivity);
+        hardware.leftBack.setPower(backLeftPower * backLeftPower * backLeftPower * sensitivity);
+        hardware.rightFront.setPower(frontRightPower * frontRightPower * frontRightPower * sensitivity);
+        hardware.rightBack.setPower(backRightPower * backRightPower * backRightPower * sensitivity);
 
     }
 
